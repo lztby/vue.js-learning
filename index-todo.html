@@ -16,8 +16,9 @@
         <ul>
             <!-- v-for 循环数据 -->
             <!-- <li v-for="item in list">{{item}}</li> -->
-
-            <todo-item v-bind:content="item" v-for="item in list">
+            <!-- v-bind:可以省略为：   v-on:click简写为@click  -->
+            <todo-item v-bind:content="item" v-bind:index="index" v-for="(item, index) in list"
+                @delete="handleItemDelete">
             </todo-item>
         </ul>
     </div>
@@ -29,8 +30,13 @@
         // })
 
         var TodoItem = {
-            props: ['content'],
-            template: "<li>{{content}}</li>"
+            props: ['content', 'index'],  //一定要记得写引号
+            template: "<li @click='handleItemClick'>{{content}}</li>",
+            methods: {
+                handleItemClick: function () {
+                    this.$emit("delete", this.index);
+                }
+            }
         }
 
         var app = new Vue({
@@ -39,13 +45,17 @@
                 TodoItem: TodoItem
             },
             data: {
-                list: ['第一课的内容', '第二课的内容'],
+                list: [],
                 inputValue: ''
             },
             methods: {
                 handleBtnClick: function () {
+
                     this.list.push(this.inputValue)
                     this.inputValue = ''
+                },
+                handleItemDelete: function (index) {
+                    this.list.splice(index, 1)
                 }
             }
         })
