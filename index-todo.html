@@ -23,12 +23,21 @@
     </div>
     <script>
         //全局组件的使用
-        Vue.component("TodoItem", {
+        // Vue.component("TodoItem", {
+        //     props: ['content'],
+        //     template: "<li>{{content}}</li>",
+        // })
+
+        var TodoItem = {
             props: ['content'],
-            template: "<li>{{content}}</li>",
-        })
+            template: "<li>{{content}}</li>"
+        }
+
         var app = new Vue({
             el: '#app',
+            components: {
+                TodoItem: TodoItem
+            },
             data: {
                 list: ['第一课的内容', '第二课的内容'],
                 inputValue: ''
