@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>to-do-list</title>
+    <script src='./vue.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="inputValue">
+        <button v-on:click="handleBtnClick">提交</button>
+        <ul>
+            <!-- v-for 循环数据 -->
+            <!-- <li v-for="item in list">{{item}}</li> -->
+
+            <todo-item v-bind:content="item" v-for="item in list">
+            </todo-item>
+        </ul>
+    </div>
+    <script>
+        //全局组件的使用
+        Vue.component("TodoItem", {
+            props: ['content'],
+            template: "<li>{{content}}</li>",
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                list: ['第一课的内容', '第二课的内容'],
+                inputValue: ''
+            },
+            methods: {
+                handleBtnClick: function () {
+                    this.list.push(this.inputValue)
+                    this.inputValue = ''
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
