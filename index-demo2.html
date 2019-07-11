@@ -1,0 +1,117 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中的样式绑定</title>
+    <script src="vue.js"></script>
+    <style>
+        .activated {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div @click="handDivClick" :class="{activated:isActivited}">hello world
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                isActivited: false
+            },
+            methods: {
+                handDivClick: function () {
+                    this.isActivited = !this.isActivited;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中的条件渲染</title>
+    <script src="vue.js"></script>
+    <style>
+        .activated {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="show">{{message}}</div>
+        <div v-show="show"  data-test="v-show">{{message}}</div>
+        <div v-else>bye world</div> 
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                show: false,
+                message: "hello world"
+            }
+
+        })
+    </script>
+</body>
+
+</html>   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中的列表渲染</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div v-for="(item,index) of list" :key="item.id">
+            {{item.text}}-----{{index}}
+        </div>
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+
+                list: [{
+                    id:"12354",
+                    text:"moinasoi"
+                }, {id:"36660",
+                    text:"sdvv"
+                }, {id:"85369",
+                    text:"lee"
+                }
+                ]
+            }
+
+        })
+    </script>
+</body>
+
+</html>
