@@ -37,4 +37,5 @@ typora-copy-images-to: img
     Vue.$set(vm.userInfo,2,10) vue对象的set方法，实例方法$set
     ```
 
-    
+* is语法
+* 在子组件定义一个data必须是一个函数，不能是对象。
