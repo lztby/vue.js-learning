@@ -53,7 +53,7 @@
 
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -101,6 +101,115 @@
                 }
 
             }
+        })
+    </script>
+
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父子组件传值</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+        <!-- 加冒号是数字，是js表达式，不加冒号是字符串 -->
+<!-- <counter :count="0"  @change="handleincreare"></counter>
+        <counter :count="1"  @change="handleincreare"></counter>
+        <div>{{total}}</div>
+
+    </div>
+
+
+    <script>
+
+
+        var counter = {
+            props: ['count'],
+            data: function () {
+                return {
+                    number: this.count
+                }
+            },
+            template: '<div @click = "handleClick"> {{number}} </div>',
+            methods: {
+                handleClick: function () {
+                    this.number++
+                    this.$emit('change', 1)
+                }
+            }
+        }
+
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                total: 1
+            },
+            components: {
+                counter: counter
+            },
+            methods:{
+                handleincreare:function(step) {
+                    this.total +=step
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件参数校验与非props特性</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+        <child content="hfb"> </child>
+
+    </div>
+
+
+    <script>
+
+        Vue.component('child', {
+            props: {
+                content: {
+                    type: String,
+                    // required: true,
+                    // default: 'default value',
+                    validator: function (value) {
+                        return (value.length > 5)
+                    }
+                }
+            },
+            template: '<div>{{content}}</div>'
+        })
+
+
+        var vm = new Vue({
+            el: "#root",
+
         })
     </script>
 
