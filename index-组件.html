@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <title>使用组件的细节点</title>
     <script src="vue.js"></script>
 </head>
+
 <body>
     <div id="root">
         <table>
             <tbody>
                 <!-- is解决一个bug -->
-                <tr is="row"></tr>
+<!-- <tr is="row"></tr>
                 <tr is="row"></tr>
                 <tr is="row"></tr>
             </tbody>
@@ -27,7 +29,7 @@
 
             //方式一，声明一个data对象 是不可以的
             data: {
-                content:'this is a row'
+                content: 'this is a row'
             },
 
             //方式一，声明一个data函数 是可以的
@@ -36,14 +38,72 @@
             //         content:'this is content'
             //     }
             // },
-            template:"<tr><td>{{content}}</td></tr>"
-            }
+            template: "<tr><td>{{content}}</td></tr>"
+        }
         )
 
         var vm = new Vue({
-            el:"#root"
+            el: "#root"
         })   
     </script>
 
 </body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用组件的细节点-ref 的使用</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <counter ref="one" @change="handlechange"></counter>
+        <counter ref="two" @change="handlechange"></counter>
+        <div>{{total}}</div>
+    </div>
+
+
+    <script>
+        Vue.component('counter', {
+            template: '<div @click="handleClick">{{number}}</div>',
+            data: function () {
+                return {
+                    number: 0
+                }
+            },
+            methods: {
+                handleClick: function () {
+                    this.number++
+                    this.$emit('change')
+
+                }
+            }
+        })
+
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                total: 0,
+            },
+            methods: {
+                handlechange: function () {
+                    this.total = this.$refs.one.number + this.$refs.two.number
+
+                }
+
+            }
+        })
+    </script>
+
+</body>
+
 </html>
