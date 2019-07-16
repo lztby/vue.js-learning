@@ -38,4 +38,20 @@ typora-copy-images-to: img
     ```
 
 * is语法
+
 * 在子组件定义一个data必须是一个函数，不能是对象。
+
+
+
+
+
+
+
+### problems
+
+* ```
+  <!-- <link rel="stylesheet" type="text/css" href="./animate.css"> -->
+      <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+  ```
+
+  第一种引入方式是不可以的，第二种引入方式是可以的，不知道为什么。
