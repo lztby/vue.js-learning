@@ -43,7 +43,28 @@ typora-copy-images-to: img
 
 
 
+### 项目
 
+* 路由就是根据网址的不同，返回不同的内容给用户
+
+* 相关配置
+
+  * ```
+    解决触屏点击300ms延迟的问题
+    npm install fastclick --save
+    
+    利用board.css库解决不同特性的手机的边框问题
+    
+    利用resize.css  不同手机初始化的统一
+    
+    iconfont 图标
+    
+    
+    无用代码的删除
+    
+    ```
+
+    
 
 
 
