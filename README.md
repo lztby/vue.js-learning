@@ -1,5 +1,5 @@
 ---
-typora-copy-images-to: img
+\typora-copy-images-to: img
 ---
 
 ### 课程内容简介
@@ -67,10 +67,11 @@ typora-copy-images-to: img
     
     ```
     
+    ```
     lang="stylus" 可以让css更简单  scoped  让style作用局部化
     
     <style lang="stylus" scoped>
-        
+    
     display：flex  弹性布局
         
     color是字体的颜色, background-color是背景的颜色
@@ -78,8 +79,32 @@ typora-copy-images-to: img
     项目里的iconfont是通过下载到本地使用的
     CSS文件引入css文件 （在src目录中）   
     ~@
+        
+    ```
+  
+  * 轮播图插件
+  
+    ```
+    Vue-Awesome-Swiper
     
-    ​    
+    npm install Vue-Awesome-Swiper@2.6.7 --save
+    
+    
+    如何解决加载页面的抖动感？
+    ```
+  
+  * ```
+    overflow :hidden
+            width :100%
+            height :0
+            padding-bottom:31.25%
+            background :#eee
+    这样可以撑开一个图片的大小
+    ```
+  
+    
+
+​    
 
 
 
