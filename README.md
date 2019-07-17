@@ -59,12 +59,25 @@ typora-copy-images-to: img
     
     iconfont 图标
     
-    
     无用代码的删除
     
-    ```
-
+安装CSS相关的配置：
+    npm install stylus --save
+    npm install stylus-loader --save
     
+    ```
+    
+    lang="stylus" 可以让css更简单  scoped  让style作用局部化
+    
+    <style lang="stylus" scoped>
+        
+    display：flex  弹性布局
+        
+    color是字体的颜色, background-color是背景的颜色
+        
+    项目里的iconfont是通过下载到本地使用的
+    
+    ​    
 
 
 
