@@ -61,6 +61,8 @@
     
     无用代码的删除
     
+    ```
+
 安装CSS相关的配置：
     npm install stylus --save
     npm install stylus-loader --save
@@ -81,7 +83,7 @@
     ~@
         
     ```
-  
+
   * 轮播图插件
   
     ```
@@ -101,8 +103,15 @@
             background :#eee
     这样可以撑开一个图片的大小
     ```
+
+* ```
+  实现带省略号的方法
+  overflow: hidden
+  white-space :nowrap
+  text-overflow :ellipsis
+  ```
+
   
-    
 
 ​    
 
