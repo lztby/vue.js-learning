@@ -129,7 +129,22 @@
 
   
 
-* 
+* ```
+  npm install axios --save     利用axios 使用ajax
+  
+  打包上线   vue提供一个转发机制
+  config>index.js
+  proxyTable: {
+        '/api':{
+          target:'http://localhost:8080',
+          pathRewrite:{
+            '^/api':'/static/mock'
+          }
+        }
+      },
+  ```
+
+  
 
 ​    
 
