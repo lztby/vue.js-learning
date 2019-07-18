@@ -63,26 +63,31 @@
     
     ```
 
-安装CSS相关的配置：
-    npm install stylus --save
-    npm install stylus-loader --save
-    
-    ```
-    
-    ```
-    lang="stylus" 可以让css更简单  scoped  让style作用局部化
-    
-    <style lang="stylus" scoped>
-    
-    display：flex  弹性布局
-        
-    color是字体的颜色, background-color是背景的颜色
-        
-    项目里的iconfont是通过下载到本地使用的
-    CSS文件引入css文件 （在src目录中）   
-    ~@
-        
-    ```
+* ```
+  安装CSS相关的配置：
+      npm install stylus --save
+      npm install stylus-loader --save
+      
+  ```
+
+* ```
+  ​```
+  
+  ​```
+  lang="stylus" 可以让css更简单  scoped  让style作用局部化
+  
+  <style lang="stylus" scoped>
+  
+  display：flex  弹性布局
+      
+  color是字体的颜色, background-color是背景的颜色
+      
+  项目里的iconfont是通过下载到本地使用的
+  CSS文件引入css文件 （在src目录中）   
+  ~@
+      
+  ​```
+  ```
 
   * 轮播图插件
   
@@ -111,7 +116,20 @@
   text-overflow :ellipsis
   ```
 
+* ```
+  text-indent:.2rem：text-indent 属性 规定了 一个元素 首行 文本内容之前应该有多少水平空格。水平空格是块级包含元素的内容盒子的左边(对于从右向左布局来说是右边).
+  font-size CSS 属性指定字体的大小。因为该属性的值会被用于计算em和ex长度单位，定义该值可能改变其他元素的大小。
+  ```
+
+* ```
+  <li class="item border-bottom "> //这样写可以有个一像素的边框
+  min-width:0   解决省略号的问题
+  <img class="item-img" :src="item.imgUrl"> 记得这个：
+  ```
+
   
+
+* 
 
 ​    
 
