@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import {mapState } from 'vuex'
+import {mapState } from 'Vuex'
 export default {
     name:'HomeHeader',
     computed:{

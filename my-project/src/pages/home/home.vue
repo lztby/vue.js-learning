@@ -17,7 +17,7 @@ import HomeWeekend from './conponents/Weekend'
 
 import axios from 'axios'
  
-import { mapState } from 'vuex'
+import { mapState } from 'Vuex'
 
 export default {
     name:'Home',
