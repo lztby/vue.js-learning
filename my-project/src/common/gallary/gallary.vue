@@ -24,15 +24,14 @@ export default {
             return []
         }
       }
-  },
-  
+  }, 
   data () {
     return{
-        swiperOptions : {
-            pagination : '.swiper-pagination',
-            paginationType : 'fraction',
+        swiperOptions: {
+            pagination: '.swiper-pagination',
+            paginationType: 'fraction',
             observeParents: true,
-            observe: true,
+            observer: true
         }
     }  
   },
