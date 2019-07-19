@@ -119,8 +119,9 @@
 * ```
   text-indent:.2rem：text-indent 属性 规定了 一个元素 首行 文本内容之前应该有多少水平空格。水平空格是块级包含元素的内容盒子的左边(对于从右向左布局来说是右边).
   font-size CSS 属性指定字体的大小。因为该属性的值会被用于计算em和ex长度单位，定义该值可能改变其他元素的大小。
-  ```
-
+  z-index 属性指定了一个具有定位属性的元素及其子代元素的 z-order。 当元素之间重叠的时候，z-order 决定哪一个元素覆盖在其余元素的上方显示。 通常来说 z-index 较大的元素会覆盖较小的一个。
+```
+  
 * ```
   <li class="item border-bottom "> //这样写可以有个一像素的边框
   min-width:0   解决省略号的问题
@@ -158,6 +159,94 @@
   
   
   优化 ：每次切换   ajax 都会重新发送   利用keep-alive  
+  ```
+
+* ```JavaScript
+  <router-link to = "/detail">
+                  <li class="item border-bottom "
+                  v-for="item of list"
+                  :key="item.id">
+                      <img class="item-img" :src="item.imgUrl">
+                  <div class="item-info">
+                      <p class="item-title">{{item.title}}</p>
+                      <p class="item-desc">{{item.desc}}</p>
+                      <button class="item-button">查看详情</button>
+                  </div>
+                  </li>
+  </router-link> 
+  
+  
+  这样会让li标签的包括的文字发生改变
+  
+  <router-link  
+  tag="li"
+  class="item border-bottom "
+  v-for="item of list"
+  :key="item.id"
+  :to = "'/detail'+item.id"
+  >
+      <img class="item-img" :src="item.imgUrl">
+          <div class="item-info">
+              <p class="item-title">{{item.title}}</p>
+  <p class="item-desc">{{item.desc}}</p>
+  <button class="item-button">查看详情</button>
+  </div>
+   </router-link> 
+  这样写就不会有问题了
+  ```
+
+* ```
+  overflow:hidden
+  height 0
+   padding-bottom: 55%
+  防止页面抖动
+          
+  common组件   
+  在webpack.base 上加一个路径优化
+  
+  
+  observeParents:ture,
+  observe:true,
+  
+  解决宽度计算的问题，刷新问题
+  
+  
+              
+  渐隐渐显的效果   随着滑动改变
+  借助这个函数  可以通过检测滑动了多少距离来 来让导航栏的出现和隐藏
+  mounted () {
+  window.addEventListener('scroll', this.handleScroll)
+  },
+  handleScroll () {
+  const top = document.documentElement.scrollTop
+  if (top > 60) {
+  let opacity = top / 140
+  opacity = opacity > 1 ? 1 : opacity
+  this.opacityStyle = { opacity }
+  this.showAbs = false
+  } else {
+  this.showAbs = true
+  }
+  }
+  
+  :style="opacityStyle">  动态增加渐隐渐显的效果
+  
+  注意对全局事件的解绑
+  
+  递归组件事件
+  
+  获得动态路由 的参数
+  
+  进到0001  之后  退出  再进0002  ajax 并没有重新获得连接？ mounted  配有actived
+  或者
+  <keep-alive exclude="detail">这样做
+  
+  每个组件的name是干什么用的？递归组件会用到，取消缓存会用到，Vue调试组件显示的名字
+  
+  
+  scrollBehavior (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    } 解决不同页面的滑动问题
   ```
 
   
