@@ -2,6 +2,15 @@
 \typora-copy-images-to: img
 ---
 
+
+
+
+
+* 虽然项目做完了，但是里面的知识仅仅学到了一半左右，而且整个功能也并没有开发完成，值得回顾。
+* 里面遇到的问题要记得。
+
+
+
 ### 课程内容简介
 
 * ![1562731945799](img/1562731945799.png)
@@ -49,19 +58,20 @@
 
 * 相关配置
 
-  * ```
-    解决触屏点击300ms延迟的问题
-    npm install fastclick --save
-    
-    利用board.css库解决不同特性的手机的边框问题
-    
-    利用resize.css  不同手机初始化的统一
-    
-    iconfont 图标
-    
-    无用代码的删除
-    
-    ```
+* 
+
+  ```
+  解决触屏点击300ms延迟的问题
+  npm install fastclick --save
+  
+  利用board.css库解决不同特性的手机的边框问题
+  
+  利用resize.css  不同手机初始化的统一
+  
+  iconfont 图标
+  ```
+
+  无用代码的删除
 
 * ```
   安装CSS相关的配置：
@@ -89,25 +99,27 @@
   ​```
   ```
 
-  * 轮播图插件
+* 轮播图插件
+
+  ```
+  Vue-Awesome-Swiper
   
-    ```
-    Vue-Awesome-Swiper
-    
-    npm install Vue-Awesome-Swiper@2.6.7 --save
-    
-    
-    如何解决加载页面的抖动感？
-    ```
+  npm install Vue-Awesome-Swiper@2.6.7 --save
   
-  * ```
-    overflow :hidden
-            width :100%
-            height :0
-            padding-bottom:31.25%
-            background :#eee
-    这样可以撑开一个图片的大小
-    ```
+  
+  如何解决加载页面的抖动感？
+  ```
+
+* ```
+  overflow :hidden
+          width :100%
+          height :0
+          padding-bottom:31.25%
+          background :#eee
+  这样可以撑开一个图片的大小
+  ```
+
+  
 
 * ```
   实现带省略号的方法
@@ -121,13 +133,14 @@
   font-size CSS 属性指定字体的大小。因为该属性的值会被用于计算em和ex长度单位，定义该值可能改变其他元素的大小。
   z-index 属性指定了一个具有定位属性的元素及其子代元素的 z-order。 当元素之间重叠的时候，z-order 决定哪一个元素覆盖在其余元素的上方显示。 通常来说 z-index 较大的元素会覆盖较小的一个。
   ```
-```
-  
+
+
+
 * ```
   <li class="item border-bottom "> //这样写可以有个一像素的边框
   min-width:0   解决省略号的问题
   <img class="item-img" :src="item.imgUrl"> 记得这个：
-```
+  ```
 
   
 
@@ -253,6 +266,8 @@
     "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",这样写可以通过ip访问8080端口
     
      @touchstart.prevent="handleTouchStart"  手机页面上下拖动
+     
+    异步组件的按需使用。
   ```
   
   
