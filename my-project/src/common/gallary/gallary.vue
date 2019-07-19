@@ -24,14 +24,15 @@ export default {
             return []
         }
       }
-  }, 
+  },
+  
   data () {
     return{
-        swiperOptions: {
-            pagination: '.swiper-pagination',
-            paginationType: 'fraction',
+        swiperOptions : {
+            pagination : '.swiper-pagination',
+            paginationType : 'fraction',
             observeParents: true,
-            observer: true
+            observer: true,
         }
     }  
   },
@@ -65,6 +66,7 @@ export default {
                 width 100%
             .swiper-pagination
                 bottom -1rem
+                color white
 
 
 </style>
