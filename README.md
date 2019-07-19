@@ -120,13 +120,14 @@
   text-indent:.2rem：text-indent 属性 规定了 一个元素 首行 文本内容之前应该有多少水平空格。水平空格是块级包含元素的内容盒子的左边(对于从右向左布局来说是右边).
   font-size CSS 属性指定字体的大小。因为该属性的值会被用于计算em和ex长度单位，定义该值可能改变其他元素的大小。
   z-index 属性指定了一个具有定位属性的元素及其子代元素的 z-order。 当元素之间重叠的时候，z-order 决定哪一个元素覆盖在其余元素的上方显示。 通常来说 z-index 较大的元素会覆盖较小的一个。
+  ```
 ```
   
 * ```
   <li class="item border-bottom "> //这样写可以有个一像素的边框
   min-width:0   解决省略号的问题
   <img class="item-img" :src="item.imgUrl"> 记得这个：
-  ```
+```
 
   
 
@@ -247,8 +248,13 @@
   scrollBehavior (to, from, savedPosition) {
       return { x: 0, y: 0 }
     } 解决不同页面的滑动问题
+    
+  
+    "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",这样写可以通过ip访问8080端口
+    
+     @touchstart.prevent="handleTouchStart"  手机页面上下拖动
   ```
-
+  
   
 
 ​    
