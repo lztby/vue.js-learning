@@ -4,20 +4,17 @@
             <swiper :options="swiperOptions" >
                 <swiper-slide
                      v-for="(item, index) in imgs"
-                    :key="index">
+                    :key="index"
+                    >
                     <img class="gallary-img" :src="item" />
                 </swiper-slide>
                 <div class="swiper-pagination" slot="pagination"></div>
             </swiper>
         </div>   
   </div>
-
 </template>
 
 <script>
-
-
-
 export default {
   name: 'common-gallary',
   props : {
