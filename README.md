@@ -3,7 +3,8 @@
 ---
 
 
-
+### 项目迁移
+项目已经迁移到一个新地址[去哪儿网项目]（https://github.com/tobeiwanttobe/my-blog/tree/master/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/vue%20project/%E5%8E%BB%E5%93%AA%E5%84%BF%E9%A1%B9%E7%9B%AE）
 
 
 * 虽然项目做完了，但是里面的知识仅仅学到了一半左右，而且整个功能也并没有开发完成，值得回顾。
